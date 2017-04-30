@@ -41,7 +41,7 @@ type = "node";
 parent = noone;
 
 G = 0; //how far away from source node
-moveNode = false; //valid for movement or not
+moveNode = false; //valid for movement or not.
 
 cost = 1;
 
