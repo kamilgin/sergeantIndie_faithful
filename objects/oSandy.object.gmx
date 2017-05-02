@@ -38,7 +38,6 @@ race = "Elf";
 //Character statistics
 level = 1;
 
-//base stats
 profMod = 2 + floor(level/5);
 
 strMod = 0; //strength
@@ -47,20 +46,14 @@ conMod = 2; //constitution
 intMod = 1; //intellect
 wisMod = 0; //wisdom
 
-//health variables
 maxHitPoints = 6 + conMod + ((level - 1) * (4 + conMod));
 hitPoints = maxHitPoints;
 
-//attack variables
 hitBonus = profMod + dexMod;
-attackType = "ranged";
-attackRange = 15 * GRID_SIZE;
 
-//move and action variables
 move = 7; //how many squares the char can move
 actions = 2; //how many times the char can move or attack per turn
 
-//init variables
 initiative = dexMod;
 initRoll = 0;
 </string>
