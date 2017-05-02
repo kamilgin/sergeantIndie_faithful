@@ -41,9 +41,13 @@ type = "node";
 parent = noone;
 
 G = 0; //how far away from source node
+<<<<<<< HEAD
 
 moveNode = false; //valid for movement or not
 attackNode = false;
+=======
+moveNode = false; //valid for movement or not.
+>>>>>>> origin/master
 
 cost = 1;
 

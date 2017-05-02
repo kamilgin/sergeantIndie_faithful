@@ -159,6 +159,7 @@ instance_create(x, y, oCursor);
                     instance_destroy();
                 }
             }
+<<<<<<< HEAD
             if(instance_position(x + GRID_SIZE/2, y + GRID_SIZE/2, oActor)) {
                 occupant = instance_position(x + GRID_SIZE/2, y + GRID_SIZE/2, oActor);
                 occupant.gridX = x / GRID_SIZE;
@@ -173,6 +174,22 @@ instance_create(x, y, oCursor);
             initRoll = irandom_range(1, 20) + initiative; //"irandom_range" returns an integer between arg 1 and 2
             ds_priority_add(other.tempInit, id, initRoll); //"other" returns the object that called the current object (oGame called oActor)
         }
+=======
+            if(instance_position(x + 16, y + 16, oActor)) {
+                occupant = instance_position(x + 16, y + 16, oActor);
+                occupant.gridX = gridX;
+                occupant.gridY = gridY;
+            }
+        }
+        state = "roll init";
+        break;
+    case "roll init":
+        tempInit = ds_priority_create();
+        with(oActor) {
+            initRoll = irandom_range(1, 20) + initiative; //"irandom_range" returns an integer between arg 1 and 2
+            ds_priority_add(other.tempInit, id, initRoll); //"other" returns the object that called the current object (oGame called oActor)
+        }
+>>>>>>> origin/master
         
         while(ds_priority_size(tempInit) &gt; 0) {
             ds_list_add(turnOrder, ds_priority_delete_max(tempInit));
@@ -189,20 +206,27 @@ instance_create(x, y, oCursor);
                 roundCounter += 1;
             }
             currentActor = ds_list_find_value(turnOrder, turnCounter);
+<<<<<<< HEAD
 
             currentActor.actions = 2;
             currentActor.canAct = true;
+=======
+            currentActor.actions = 2;
+>>>>>>> origin/master
             
             //only pass off actions and cursor control if actor is RED_ARMY
             if(currentActor.army == RED_ARMY) {
                 oCursor.selectedActor = currentActor;
                 movement_range(map[currentActor.gridX, currentActor.gridY], currentActor.move, currentActor.actions);   
+<<<<<<< HEAD
                 
                 switch(currentActor.attackType) {
                     case "ranged":
                         ranged_attack_range(currentActor);
                         break;
                 }
+=======
+>>>>>>> origin/master
             //otherwise set flash to true and set alarm
             } else {
                 currentActor.flash = true;

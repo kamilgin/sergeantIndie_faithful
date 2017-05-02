@@ -38,7 +38,10 @@ race = "Gnome";
 //Character statistics
 level = 1;
 
+<<<<<<< HEAD
 //Base stats
+=======
+>>>>>>> origin/master
 profMod = 2 + floor(level/5);
 
 strMod = 0; //strength
@@ -47,6 +50,7 @@ conMod = 2; //constitution
 intMod = 3; //intellect
 wisMod = 0; //wisdom
 
+<<<<<<< HEAD
 //Health stats
 maxHitPoints = 4 + conMod + ((level - 1) * (3 + conMod));
 hitPoints = maxHitPoints;
@@ -61,6 +65,16 @@ move = 5; //how many squares the char can move
 actions = 2; //how many times the char can move or attack per turn
 
 //Initiative variables
+=======
+maxHitPoints = 4 + conMod + ((level - 1) * (3 + conMod));
+hitPoints = maxHitPoints;
+
+hitBonus = profMod + strMod;
+
+move = 5; //how many squares the char can move
+actions = 2; //how many times the char can move or attack per turn
+
+>>>>>>> origin/master
 initiative = dexMod;
 initRoll = 0;
 </string>

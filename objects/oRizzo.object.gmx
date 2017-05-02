@@ -38,7 +38,10 @@ race = "Human";
 //Character statistics
 level = 1;
 
+<<<<<<< HEAD
 //Base stats
+=======
+>>>>>>> origin/master
 profMod = 2 + floor(level/5);
 
 strMod = 2; //strength
@@ -47,6 +50,7 @@ conMod = 1; //constitution
 intMod = 0; //intellect
 wisMod = 3; //wisdom
 
+<<<<<<< HEAD
 //Health stats
 maxHitPoints = 8 + conMod + ((level - 1) * (5 + conMod));
 hitPoints = maxHitPoints;
@@ -67,6 +71,16 @@ move = 6; //how many squares the char can move
 actions = 2; //how many times the char can move or attack per turn
 
 //Initiative variables
+=======
+maxHitPoints = 8 + conMod + ((level - 1) * (5 + conMod));
+hitPoints = maxHitPoints;
+
+hitBonus = profMod + strMod;
+
+move = 6; //how many squares the char can move
+actions = 2; //how many times the char can move or attack per turn
+
+>>>>>>> origin/master
 initiative = dexMod;
 initRoll = 0;
 </string>

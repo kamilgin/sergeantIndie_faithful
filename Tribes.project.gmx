@@ -21,7 +21,10 @@
     <script>scripts\wipe_nodes.gml</script>
     <script>scripts\color_move_node.gml</script>
     <script>scripts\movement_range.gml</script>
+<<<<<<< HEAD
     <script>scripts\ranged_attack_range.gml</script>
+=======
+>>>>>>> origin/master
   </scripts>
   <objects name="objects">
     <object>objects\oNode</object>
