@@ -38,6 +38,7 @@ race = "Human";
 //Character statistics
 level = 1;
 
+//base stats
 profMod = 2 + floor(level/5);
 
 strMod = 2; //strength
@@ -46,14 +47,26 @@ conMod = 1; //constitution
 intMod = 0; //intellect
 wisMod = 3; //wisdom
 
+//health variables
 maxHitPoints = 8 + conMod + ((level - 1) * (5 + conMod));
 hitPoints = maxHitPoints;
 
+//attack variables
 hitBonus = profMod + strMod;
 
+//damage variables
+damageDice = 8;
+damageBonus = strMod;
+damageType = "bludgeoning";
+
+//defense variables
+armorClass = 16;
+
+//move and action variables
 move = 6; //how many squares the char can move
 actions = 2; //how many times the char can move or attack per turn
 
+//init variables
 initiative = dexMod;
 initRoll = 0;
 </string>

@@ -38,6 +38,7 @@ race = "Dwarf";
 //Character statistics
 level = 1;
 
+//base stats
 profMod = 2 + floor(level/5);
 
 strMod = 3; //strength
@@ -46,14 +47,26 @@ conMod = 2; //constitution
 intMod = 0; //intellect
 wisMod = 1; //wisdom
 
+//health variables
 maxHitPoints = 10 + conMod + ((level - 1) * (6 + conMod));
 hitPoints = maxHitPoints;
 
+//attack variables
 hitBonus = profMod + strMod;
 
+//damage variables
+damageDice = 8;
+damageBonus = strMod;
+damageType = "slashing";
+
+//defense variables
+armorClass = 18;
+
+//move and action variables
 move = 5; //how many squares the char can move
 actions = 2; //how many times the char can move or attack per turn
 
+//init variables
 initiative = dexMod;
 initRoll = 0;
 </string>

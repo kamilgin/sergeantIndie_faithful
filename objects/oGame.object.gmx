@@ -137,22 +137,25 @@ instance_create(x, y, oCursor);
         
                 switch(tempTerrain.type) {
                     case "rock": 
+                        instance_change(oRock, true);
                         type = "rock";
-                        sprite_index  = sRock;
+                        //sprite_index  = sRock;
                         passable = false;
         
                         break;
                     case "rubble":
+                        instance_change(oRubble, true);
                         type = "rubble";
-                        sprite_index = sRubble;
+                        //sprite_index = sRubble;
                         passable = true;
                         cost = 2;
         
                         break;
         
                     case "grass":
+                        instance_change(oGrass, true);
                         type = "grass";
-                        sprite_index = sGrass;
+                        //sprite_index = sGrass;
                         passable = true;
                         cost = 1;
                 }
@@ -191,12 +194,22 @@ instance_create(x, y, oCursor);
                 roundCounter += 1;
             }
             currentActor = ds_list_find_value(turnOrder, turnCounter);
+            
             currentActor.actions = 2;
+            currentActor.canAct = true;
             
             //only pass off actions and cursor control if actor is RED_ARMY
             if(currentActor.army == RED_ARMY) {
                 oCursor.selectedActor = currentActor;
+                
                 movement_range(map[currentActor.gridX, currentActor.gridY], currentActor.move, currentActor.actions);   
+                
+                switch(currentActor.attackType) {
+                    case "ranged":
+                        ranged_attack_range(currentActor);
+                        break;
+                }
+                
             //otherwise set flash to true and set alarm
             } else {
                 currentActor.flash = true;
